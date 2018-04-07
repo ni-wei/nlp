@@ -1,0 +1,68 @@
+Task: 
+1. to use jieba to segment the GuiZhou H reports into words, and, 
+2. to generate a user dictionary using those words.
+
+========================================
+
+Input corpus: Column "影像学表现" and Column "影像学诊断" of the 67 .xlsx files in the directory /home/idp/idpCHN/word_seg/iter_input
+
+excel_to_txt.py generated report_in_txt.txt from the input corpus. excel_to_txt.py is not well structure and should be reviewed.
+
+report_in_txt.txt is of the size 438.9MB, and is not located here but at in the directory /home/idp/idpCHN/word_seg
+
+!report_in_txt.txt is the input of the subsequent procedure.!
+
+========================================
+
+word_cut.py generated new_dict.txt from report_in_txt.txt.
+
+Renamed new_dict.txt as dict_sortedByFreq.txt, and hence cannot be found in this dir.
+
+========================================
+
+Deleted all words whose freq. <3. 
+
+Also remove the freq. numbers, using either print_word_remove_freqNum.py or less_robust_remove_freqNum.py. 
+
+The resultant file is print_word_only.txt.
+
+========================================
+
+Manually correct print_word_only.txt. On going.
+
+When this sub-task is done, use print_sort.py to post-process print_word_only.txt.
+
+Time consumed in hours (both task and time are approx./not accurately logged):
+			last 1000 words			8 (Apr 2 - 3)
+			1st 1000 words			3 (Apr 3 PM)
+			2nd 1000 words			7 (Apr 4 9am - 5pm excluding 1 hr lunch time)
+			3rd 1000 words			x
+
+========================================
+
+###This section is to-be-reviewed. My method for Task 1 keeps changing! 
+###The current method is word_cut.py 
+
+method for Task 1:
+## !Not! combine outputs using both jieba.lcut full mode ##
+## and jieba.lcut default (precise) mode ##
+## as a set and output to output_brain_finding.txt ##
+
+- jieba.lcut default (precise) mode.
+- output as a set, so that there is no duplicate items in the output set.
+- output to finding_n_diag.txt.
+
+========================================
+
+output:
+currently the output file is "finding_n_diag.txt".
+4493 lines including everything: original status.
+all numbers merged to "基数词/NUM".
+
+========================================
+
+			time (in secs) to process all 67 medical reports i have, using jieba.enable_parallel(4):
+Process 1.	708.8075230121613 (parallel)
+Process 2.	693.5249302387238 (parallel)
+Process 3.	701.7814025878906 (no parallel)
+
