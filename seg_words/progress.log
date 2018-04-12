@@ -22,12 +22,16 @@ Renamed new_dict.txt as dict_sortedByFreq.txt, and hence cannot be found in this
 
 Deleted all words whose freq. <3. 
 
-Also remove the freq. numbers, using either print_word_remove_freqNum.py or less_robust_remove_freqNum.py. 
+Also removed the freq. numbers, using either print_word_remove_freqNum.py or less_robust_remove_freqNum.py. 
 
 The resultant file is print_word_only.txt.
 
 ========================================
-
+------------
+temp note: 
+Line 16126 - 18413: freq. == 3
+Line 14419 - 16125: freq. == 4
+------------
 Manually correct print_word_only.txt. On going.
 
 When this sub-task is done, use print_sort.py to post-process print_word_only.txt.
@@ -36,8 +40,10 @@ Time consumed in hours (both task and time are approx./not accurately logged):
 			last 1000 words			8 (Apr 2 - 3)
 			1st 1000 words			3 (Apr 3 PM)
 			2nd 1000 words			7 (Apr 4 9am - 5pm excluding 1 hr lunch time)
-			3rd 1000 words			x
-
+			3rd 1000 words			4 (Apr 5-7, OT 2 hrs, Apr 8, 8:45-10:45)
+			4th 1000 words			6 (Apr 8-9, ard 3 hrs each day)
+			5th 1000 words			6 (Apr 10-12, ard 2 hrs each day)
+			6th 1000 words			x (Apr 10-12, ard 2 hrs each day)
 ========================================
 
 ###This section is to-be-reviewed. My method for Task 1 keeps changing! 
