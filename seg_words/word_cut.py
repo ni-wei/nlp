@@ -11,7 +11,7 @@ content = open('report_in_txt.txt', 'rb').read()  # GuiZhou reports as the input
 ##content = open('input_brain5.txt', 'rb').read()
 
 start_time = time.time()
-jieba.load_userdict("coronary_dict.txt")
+jieba.load_userdict("GuiZhou_dict_sorted_v0.txt")
 ##words = jieba.lcut(content)  # words = pseg.lcut(content)  ## 默认是精确模式
 words = [x for x in jieba.cut(content)] # if len(x) >= 2]
 
@@ -22,15 +22,15 @@ print(elapsed_time)
 #
 # 将结果存入文件jiebaCutOutput.txt中,
 # 相当于做一个缓存
-with open('jiebaCutOutput.txt','w+') as f:
-	for word in words:
-		f.write(word+'\n')
+##with open('jiebaOutput.txt','w+') as f: #'jiebaCutOutput.txt'
+##	for word in words:
+##		f.write(word+'\n')
 
 ## delete each line that contains a number. #To-do: refine it. better speed it up.
-for index, word in enumerate(words):
-	m_number = re.search(r"(\d*\.\d+|\d+)+", word)
-	if m_number: ##is None:
-		del(words[index]) ## print (word.word, word.flag)
+##for index, word in enumerate(words):
+	##m_number = re.search(r"(\d*\.\d+|\d+)+", word)
+	##if m_number: ##is None:
+		##del(words[index]) ## print (word.word, word.flag)
 c = Counter(words)
 
 
@@ -51,11 +51,13 @@ c = Counter(words)
 	##m_number = re.search(r"(\d*\.\d+|\d+)+", word)
 	##if m_number is None:
 		##print (word) ## print (word.word, word.flag)
-with open('new_dict.txt','w+') as f:
+with open('test_dict.txt','w+') as f: #'new_dict.txt'
 	##for word in words_set:
 		##if check_str_number(word) is '<num>':
 			##m_number = re.search(r"(\d*\.\d+|\d+)+", word)
 			##if m_number is None:
 				##f.write(word+'\n')
 	for word, count in c.most_common():
-		f.write(word+' '+str(count)+'\n')
+		m_number = re.search(r"(\d*\.\d+|\d+)+", word)
+		if m_number is None:
+			f.write(word+' '+str(count)+'\n')

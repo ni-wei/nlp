@@ -1,10 +1,11 @@
-##ToDo: supposed to be a more robust version. 
+##ToDo: a more robust version. 
 ##Unsolved: if the format of a certain line is ' 2976162' or '  1803250', then the output print is the number. That is not what we want.
 ##However, the unsolved problem is trivial for the current input file "new_dict.txt".
 ##We can either ignore the wrong output prints, or simply delete those "problematic" input lines beforehand.
-
-in_file = open("new_dict.txt")	# input file. All sentences are Calcium-relevant. Manually extracted from the original training.txt.
-output = open("print_word_only.txt", "w+")	# output file.
+import sys
+## print(sys.argv[1:])
+in_file = open(sys.argv[1])	# input file.
+output = open(sys.argv[2], "w+")	# output file.
 
 with in_file as f:
 	for line in f:

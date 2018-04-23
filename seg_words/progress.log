@@ -14,13 +14,16 @@ report_in_txt.txt is of the size 438.9MB, and is not located here but at in the 
 
 ========================================
 
-word_cut.py generated new_dict.txt from report_in_txt.txt.
-
-Renamed new_dict.txt as dict_sortedByFreq.txt, and hence cannot be found in this dir.
+## word_cut.py generated new_dict.txt from report_in_txt.txt.
+## Renamed new_dict.txt as dict_sortedByFreq.txt, and hence cannot be found in this dir.
+## NB: due to unsuccessful version control of word_cut.py, I cannot repeat the 2 steps described in the above 2 lines any more.
+## Hence these 2 steps will be replaced by: 
+word_cut.py took report_in_txt.txt as the input, and generated test_dict.txt.
+(word_cut.py includes a method excluding the number words/基数词 from the output test_dict.txt. I.e., it prints into the output file only those words that are NOT numbers)
 
 ========================================
 
-Deleted all words whose freq. <3. 
+Deleted all words whose freq. <3 from test_dict.txt. 
 
 Also removed the freq. numbers, using either print_word_remove_freqNum.py or less_robust_remove_freqNum.py. 
 
@@ -33,8 +36,7 @@ Line 16126 - 18413: freq. == 3
 Line 14419 - 16125: freq. == 4
 ------------
 Manually correct print_word_only.txt. On going.
-
-When this sub-task is done, use print_sort.py to post-process print_word_only.txt.
+Update: first round of manual correction is done. 
 
 Time consumed in hours (both task and time are approx./not accurately logged):
 			last 1000 words			8 (Apr 2 - 3)
@@ -69,10 +71,14 @@ method for Task 1:
 
 ========================================
 
-output:
-currently the output file is "finding_n_diag.txt".
-4493 lines including everything: original status.
-all numbers merged to "基数词/NUM".
+When the manual correction is done, use print_sort.py to post-process print_word_only.txt.
+print_sort.py simply split the input file into two output files: 1 for the correct words and 1 for the incorrect ones.
+The rule of splitting merely depends on that an incorrect word should have a '0' at the line end. NB: this is NOT robust! need to enhance.
+
+One should also combine the two output files into a single user dictionary. Ideally one should also programmatically do this combination job. For the time being, it is manually done.
+
+(perhaps a more important note) NB: Besides the two files, in my opinion, one should also select those incorrect words in the old user dictionaries, i.e. those words denoted by a '0' at the line end. Then one should add them into the jieba cut result/new user dictionary. 
+The reason is that those incorrect words in the old user dictionaries will definitely not appear in the jieba cut result this round, but that they will be useful the next time we use jieba cut. Hence they should be added into the new user dictionary.
 
 ========================================
 
