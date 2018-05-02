@@ -6,11 +6,18 @@ Task:
 
 Input corpus: Column "影像学表现" and Column "影像学诊断" of the 67 .xlsx files in the directory /home/idp/idpCHN/word_seg/iter_input
 
+!These 67 .xlsx files are NOT all the data we copied from the GuiZhou H.!
+!See all the data in /home/idp/idpCHN/word_seg/complete_till26thMar2018!
+
 excel_to_txt.py generated report_in_txt.txt from the input corpus. excel_to_txt.py is not well structure and should be reviewed.
 
 report_in_txt.txt is of the size 438.9MB, and is not located here but at in the directory /home/idp/idpCHN/word_seg
 
 !report_in_txt.txt is the input of the subsequent procedure.!
+--------
+# Note made on 23.04.18:
+When generating v0.2 dict using v0.1 dict, i modified a few lines in report_in_txt.txt, e.g., deleting those obvious typos/errors.
+--------
 
 ========================================
 
@@ -28,6 +35,13 @@ Deleted all words whose freq. <3 from test_dict.txt.
 Also removed the freq. numbers, using either print_word_remove_freqNum.py or less_robust_remove_freqNum.py. 
 
 The resultant file is print_word_only.txt.
+
+========================================
+!High importance!
+## Need to append Part II of the old dict (e.g., "coronary_dict.txt") to the end of this new dict (e.g., "GuiZhou_dict_sorted_v0.txt").
+## Reason is that jieba used "coronary_dict.txt" to generate the "GuiZhou_dict_sorted_v0.txt" dict, 
+## therefore those words Part II of "coronary_dict.txt" won't appear in the jieba-generated GuiZhou dict, 
+## and that we need to manually add them into the new/final dict.
 
 ========================================
 ------------
