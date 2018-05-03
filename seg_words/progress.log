@@ -101,3 +101,93 @@ Process 1.	708.8075230121613 (parallel)
 Process 2.	693.5249302387238 (parallel)
 Process 3.	701.7814025878906 (no parallel)
 
+========================================
+
+!Completed: correct the "freq_noLessThan5_dict_v1.txt" user dict!
+Find errors using the coronary text (~/Desktop/nw_dictionary/tttttttttttt.txt) and the "freq_noLessThan5_dict_v1.txt" user dict.
+This is to correct word-seg errors in the coronary text/to guarantee the word-seg results is error-free for the coronary text.
+
+Besides the corrections listed below, i corrected a few more entries, such as 野呈细 and 及结. !The corrections is all what "freq_noLessThan5_dict_v2.txt" differs from "freq_noLessThan5_dict_v1.txt".!
+
+强灶：检查自定义词典（增加"增强灶"） 
+余肝：自定义词典错误。删除。
+左右冠状动脉: exists in my output.
+干横径：自定义词典错误。删除。
+锐缘：检查自定义词典（增加"锐缘支"） 
+旁及：自定义词典错误。删除。
+平胸：自定义词典错误。删除。
+冠区：自定义词典错误（增加"放射冠"、"放射冠区"）
+
+单字词：重新检查？
+啊：保留
+主动：保留
+下线：保留
+腘：保留；并增加"腘窝"
+后见：删除
+沟内：删除。增加"房室沟"、"结肠沟"
+成角：保留
+
+于表浅 0
+及缘 0
+于升 0
+及无冠 0
+瘘入 0
+起远 0
+及略 0
+及锐 0
+时见 0
+窦回 0
+左势 0
+最处
+成约 0
+处仅 0
+余娥 0
+根桥 0
+近及 0
+技及 0
+各心 0
+以非化 0
+引引 0
+形无肺 0
+近中 0
+主肝见 0
+支自 0
+日胸 0
+以远后 0
+此桥 0
+近长 0
+见多出 0
+点见 0
+为毫 0
+见睛 0
+面内 0
+及以 0
+见小经 0
+参数均 0
+无冠 0
+因以 0
+管余 0
+升及 0
+处窄 0
+于主 0
+
+========================================
+
+freq_noLessThan5_dict_v3.txt is the result of further modifying freq_noLessThan5_dict_v2.txt. 
+v3 is the latest version.
+
+The command and difference between these 2 versions can be seen as follows. Only 2 changes.
+
+diff freq_noLessThan5_dict_v2.txt freq_noLessThan5_dict_v3.txt 
+2391c2391
+< 起
+---
+> 起 0
+4790c4790
+< 引
+---
+> 引 0
+
+========================================
+
+
