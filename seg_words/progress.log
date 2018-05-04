@@ -190,4 +190,41 @@ diff freq_noLessThan5_dict_v2.txt freq_noLessThan5_dict_v3.txt
 
 ========================================
 
+Experiment: change word frequency in user dict.
+
+Set-up: change Line 978 of "freq_noLessThan5_dict_v3.txt",
+from "升主动脉" to "升主动脉 4" (omitting the new line character '\n' at the end of the line).
+
+Result: consequent difference in jieba word-seg as follows. Illustrates how word frequency in user dict influences the word-seg result.
+
+25998,25999c25998,25999
+< 升
+< 主动脉壁
+---
+> 升主动脉
+> 壁
+52977,52978c52977,52978
+< 升
+< 主动脉壁
+---
+> 升主动脉
+> 壁
+69046,69047c69046,69047
+< 升
+< 主动脉壁
+---
+> 升主动脉
+> 壁
+70307,70308c70307,70308
+< 升
+< 主动脉壁
+---
+> 升主动脉
+> 壁
+212053,212054c212053,212054
+< 升
+< 主动脉壁
+---
+> 升主动脉
+> 壁
 
