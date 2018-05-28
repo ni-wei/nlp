@@ -7,7 +7,7 @@ Task:
 Input corpus: Column "影像学表现" and Column "影像学诊断" of the 67 .xlsx files in the directory /home/idp/idpCHN/word_seg/iter_input
 
 !These 67 .xlsx files are NOT all the data we copied from the GuiZhou H.!
-!See all the data in /home/idp/idpCHN/word_seg/complete_till26thMar2018!
+!See all the data in /home/idp/idpCHN/reports_from_guizhou/complete_till26thMar2018!
 
 excel_to_txt.py generated report_in_txt.txt from the input corpus. excel_to_txt.py is not well structure and should be reviewed.
 
